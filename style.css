@@ -65,7 +65,7 @@ body {
         radial-gradient(
             circle at 8% 42%,
             rgba(124, 166, 58, 0.07),
-            tectionransparent 30%
+            transparent 30%
         ),
         linear-gradient(
             135deg,
@@ -1547,6 +1547,7 @@ button:focus-visible {
 
 
 
+
 /* =========================================================
    28. REDUCED MOTION
    ========================================================= */
@@ -2440,4 +2441,395 @@ button:focus-visible {
         letter-spacing: 0.07em;
     }
 
+}
+/* =========================================================
+   FINAL MOBILE RESPONSIVE SYSTEM
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    /* -----------------------------------------------------
+       GLOBAL CONTAINER
+       ----------------------------------------------------- */
+
+    .container {
+        width: calc(100% - 36px);
+        max-width: none;
+    }
+
+
+    /* -----------------------------------------------------
+       HEADER / NAVIGATION
+       ----------------------------------------------------- */
+
+    .site-header {
+        height: 70px;
+    }
+
+    .nav-container {
+        width: calc(100% - 36px);
+    }
+
+    .logo {
+        width: 44px;
+        height: 44px;
+        font-size: 13px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        font-size: 24px;
+    }
+
+    .main-nav {
+        display: none;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+
+    /* -----------------------------------------------------
+       GENERAL SECTIONS
+       ----------------------------------------------------- */
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .section-header {
+        display: block;
+        margin-bottom: 42px;
+    }
+
+    .section-label {
+        display: block;
+        margin-bottom: 14px;
+    }
+
+    .section-title {
+        font-size: clamp(38px, 11vw, 58px);
+        line-height: 1;
+    }
+
+    .section-intro {
+        margin-top: 18px;
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+
+    /* -----------------------------------------------------
+       ABOUT
+       ----------------------------------------------------- */
+
+    .about-section {
+        padding-top: 70px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+
+    /* -----------------------------------------------------
+       TIMELINE / RESEARCH EXPERIENCE
+       ----------------------------------------------------- */
+
+    .timeline-item {
+        display: block;
+        padding: 30px 0 34px;
+    }
+
+    .timeline-date {
+        margin-bottom: 14px;
+    }
+
+    .timeline-content h3 {
+        font-size: 21px;
+    }
+
+    .timeline-content h4 {
+        font-size: 13px;
+        margin-bottom: 13px;
+    }
+
+    .timeline-content p,
+    .timeline-content ul {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+
+    /* -----------------------------------------------------
+       EXPERIENCE
+       ----------------------------------------------------- */
+
+    .experience-item {
+        display: block;
+        padding: 32px 0 36px;
+    }
+
+    .experience-content {
+        max-width: none;
+    }
+
+
+    /* -----------------------------------------------------
+       SKILLS
+       ----------------------------------------------------- */
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .skill-group {
+        padding: 23px;
+    }
+
+
+    /* -----------------------------------------------------
+       EXTERNAL LINKS
+       ----------------------------------------------------- */
+
+    .external-links {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .external-link {
+        padding: 18px 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       EDUCATION
+       ----------------------------------------------------- */
+
+    .education-section {
+        padding-top: 70px;
+        padding-bottom: 80px;
+    }
+
+    .education-section .section-heading {
+        margin-bottom: 42px;
+    }
+
+    .education-section .section-heading h2 {
+        font-size: clamp(38px, 11vw, 58px);
+    }
+
+    .education-item {
+        display: block;
+        padding: 30px 0 34px;
+    }
+
+    .education-year {
+        margin-bottom: 14px;
+        padding-top: 0;
+    }
+
+    .education-item h3 {
+        font-size: 1.18rem;
+    }
+
+    .education-item h4 {
+        font-size: 0.93rem;
+    }
+
+    .education-item > div > p:not(.education-thesis) {
+        font-size: 0.88rem;
+    }
+
+    .education-thesis {
+        margin-top: 16px;
+        font-size: 0.88rem;
+    }
+
+
+    /* -----------------------------------------------------
+       ACADEMIC HIGHLIGHTS / RECOGNITION
+       ----------------------------------------------------- */
+
+    .recognition-section {
+        padding-top: 70px;
+        padding-bottom: 80px;
+    }
+
+    .recognition-section .section-heading {
+        margin-bottom: 42px;
+    }
+
+    .recognition-item {
+        display: block;
+        padding: 30px 0 34px;
+    }
+
+    .recognition-label {
+        margin-bottom: 14px;
+        padding-top: 0;
+    }
+
+    .recognition-content {
+        max-width: none;
+    }
+
+    .recognition-content h3 {
+        font-size: 1.18rem;
+    }
+
+    .recognition-content p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+
+    /* -----------------------------------------------------
+       CREDENTIALS
+       ----------------------------------------------------- */
+
+    .credential-item {
+        display: block;
+        padding: 30px 0 34px;
+    }
+
+    .credential-label {
+        margin-bottom: 14px;
+        padding-top: 0;
+    }
+
+
+    /* -----------------------------------------------------
+       RESEARCH INTEREST TAGS
+       ----------------------------------------------------- */
+
+    .research-tags {
+        gap: 8px;
+    }
+
+    .research-tags span {
+        min-height: 35px;
+        padding: 6px 12px;
+        font-size: 11px;
+        white-space: normal;
+        text-align: center;
+    }
+
+
+    /* -----------------------------------------------------
+       RESEARCH PUBLICATIONS
+       ----------------------------------------------------- */
+
+    .case-publications-heading {
+        display: block;
+        margin-bottom: 28px;
+    }
+
+    .case-publications-heading h3 {
+        font-size: clamp(1.6rem, 7vw, 2.2rem);
+    }
+
+    .case-publication-link {
+        grid-template-columns: 1fr;
+        gap: 7px;
+        padding: 20px 0;
+    }
+
+    .case-publication-link strong {
+        font-size: 0.95rem;
+    }
+
+    .case-publication-link em {
+        white-space: normal;
+        font-size: 0.75rem;
+    }
+
+
+    /* -----------------------------------------------------
+       RESEARCH TAKEAWAY
+       ----------------------------------------------------- */
+
+    .research-case-takeaway {
+        padding: 35px 0 20px;
+    }
+
+    .research-case-takeaway > p:not(.case-label) {
+        font-size: 1.18rem;
+        line-height: 1.55;
+    }
+
+
+    /* -----------------------------------------------------
+       TOOLKIT
+       ----------------------------------------------------- */
+
+    .toolkit-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .toolkit-group {
+        min-height: auto;
+        padding: 23px;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+       ----------------------------------------------------- */
+
+    .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 22px 0;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+    .container {
+        width: calc(100% - 30px);
+    }
+
+    .nav-container {
+        width: calc(100% - 30px);
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: clamp(36px, 12vw, 52px);
+    }
+
+    .timeline-content h3 {
+        font-size: 20px;
+    }
+
+    .education-item h3,
+    .recognition-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .education-thesis {
+        padding-left: 13px;
+    }
+
+    .external-link {
+        padding: 17px 18px;
+    }
 }
