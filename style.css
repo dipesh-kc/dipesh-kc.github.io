@@ -65,7 +65,7 @@ body {
         radial-gradient(
             circle at 8% 42%,
             rgba(124, 166, 58, 0.07),
-            transparent 30%
+            tectionransparent 30%
         ),
         linear-gradient(
             135deg,
@@ -1647,7 +1647,6 @@ button:focus-visible {
 
     .section-header {
         display: block;
-
         margin-bottom: 40px;
     }
 
@@ -1665,7 +1664,6 @@ button:focus-visible {
 
     .about-grid {
         grid-template-columns: 1fr;
-
         gap: 40px;
     }
 
@@ -2315,8 +2313,9 @@ button:focus-visible {
 }
 
 /* =========================================================
-   29. FINAL HERO
+   29. HERO SECTION
    ========================================================= */
+
 
 /* ---------------------------------------------------------
    HERO BASE
@@ -2324,43 +2323,25 @@ button:focus-visible {
 
 .hero {
     position: relative;
-
     min-height: calc(100vh - var(--header-height));
-
     display: flex;
     align-items: center;
-
-    padding: 90px 0 85px;
-
+    justify-content: space-between;
+    gap: 60px;
+    padding: 90px max(50px, calc((100vw - var(--container)) / 2)) 85px;
     overflow: hidden;
 }
 
-.hero-inner {
-    position: relative;
-    z-index: 2;
 
-    width: 100%;
-}
 /* ---------------------------------------------------------
-   HERO VISUAL — DESKTOP POSITION
+   HERO CONTENT
    --------------------------------------------------------- */
 
-.hero-visual {
-    position: absolute;
-
-    top: -10px;
-    right: 20px;
-
-    z-index: 1;
-}
 .hero-content {
     position: relative;
-    z-index: 5;
-
-    width: calc(100% - 470px);
-    max-width: 820px;
-
-    padding-left: 28px;
+    z-index: 2;
+    flex: 1;
+    max-width: 780px;
 }
 
 
@@ -2370,13 +2351,11 @@ button:focus-visible {
 
 .hero-eyebrow {
     margin-bottom: 24px;
-
     color: #111111;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    letter-spacing: 0.14em;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    line-height: 1.7;
     text-transform: uppercase;
 }
 
@@ -2386,26 +2365,17 @@ button:focus-visible {
    --------------------------------------------------------- */
 
 .hero h1 {
-    max-width: 850px;
-
-    margin-bottom: 34px;
-
+    margin-bottom: 30px;
     color: #111111;
-
     font-size: clamp(76px, 8vw, 120px);
-
     line-height: 0.88;
-
     font-weight: 800;
-
-    letter-spacing: -0.065em;
+    letter-spacing: -0.07em;
 }
 
 .hero h1 strong {
     display: block;
-
     color: #111111;
-
     font-weight: 800;
 }
 
@@ -2415,44 +2385,29 @@ button:focus-visible {
    --------------------------------------------------------- */
 
 .hero-focus {
-    max-width: 850px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 14px;
 
-    margin: 28px 0 0;
+    max-width: 800px;
+    margin-top: 28px;
 
     color: #7928c8;
-
-    font-size: clamp(20px, 2vw, 27px);
-
-    line-height: 1.65;
-
+    font-size: clamp(19px, 2vw, 27px);
+    line-height: 1.5;
     font-weight: 700;
-
     letter-spacing: -0.025em;
 }
 
 .hero-focus span {
-    padding: 0 7px;
-
-    color: #7928c8;
-
-    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
 }
 
-
-/* ---------------------------------------------------------
-   HERO DESCRIPTION
-   --------------------------------------------------------- */
-
-.hero-description {
-    max-width: 650px;
-
-    margin-top: 18px;
-
-    color: #4b4b4b;
-
-    font-size: 16px;
-
-    line-height: 1.8;
+.hero-focus span:not(:last-child)::after {
+    content: "•";
+    margin-left: 14px;
 }
 
 
@@ -2462,29 +2417,25 @@ button:focus-visible {
 
 .hero-actions {
     display: flex;
-
     align-items: center;
-
     gap: 14px;
-
-    margin-top: 32px;
+    margin-top: 34px;
 }
 
 .hero-actions a {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
+    gap: 8px;
 
-    min-height: 50px;
-
-    padding: 0 25px;
+    min-height: 52px;
+    padding: 0 26px;
 
     border: 1px solid #111111;
     border-radius: 0;
 
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 650;
 
     transition:
         background 0.3s ease,
@@ -2494,31 +2445,23 @@ button:focus-visible {
 
 .hero-actions a:first-child {
     background: #111111;
-
     color: #ffffff;
 }
 
 .hero-actions a:first-child:hover {
     background: #7928c8;
-
     border-color: #7928c8;
-
     transform: translateY(-2px);
 }
 
-.hero-actions a:not(:first-child) {
+.hero-actions a:last-child {
     background: transparent;
-
     color: #111111;
-
-    border-color: #111111;
 }
 
-.hero-actions a:not(:first-child):hover {
+.hero-actions a:last-child:hover {
     background: #111111;
-
     color: #ffffff;
-
     transform: translateY(-2px);
 }
 
@@ -2528,13 +2471,10 @@ button:focus-visible {
    --------------------------------------------------------- */
 
 .hero-divider {
-    max-width: 760px;
-
+    width: 100%;
     height: 1px;
-
-    margin-top: 48px;
-
-    background: rgba(0, 0, 0, 0.15);
+    margin-top: 52px;
+    background: rgba(0, 0, 0, 0.14);
 }
 
 
@@ -2543,79 +2483,68 @@ button:focus-visible {
    --------------------------------------------------------- */
 
 .hero-stats {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 35px;
 
-    align-items: flex-start;
-
-    gap: 70px;
-
+    width: 100%;
     margin-top: 28px;
 }
 
 .hero-stat {
+    min-width: 0;
+
     display: flex;
-
     flex-direction: column;
-
-    gap: 5px;
+    gap: 7px;
 }
 
 .hero-stat strong {
     color: #111111;
-
-    font-size: 27px;
-
-    line-height: 1;
-
+    font-size: clamp(21px, 2vw, 28px);
+    line-height: 1.05;
     font-weight: 800;
+    letter-spacing: -0.035em;
 
-    letter-spacing: -0.03em;
+    overflow-wrap: anywhere;
 }
 
 .hero-stat span {
-    color: #4d4d4d;
-
-    font-size: 11px;
-
-    line-height: 1.4;
-
-    font-weight: 500;
-
-    letter-spacing: 0.12em;
-
+    color: #555555;
+    font-size: 10px;
+    line-height: 1.45;
+    font-weight: 600;
+    letter-spacing: 0.11em;
     text-transform: uppercase;
 }
 
 
 /* ---------------------------------------------------------
-   PROFILE PHOTO
+   PROFILE PHOTO — DESKTOP
    --------------------------------------------------------- */
 
-
 .profile-circle {
-    width: 440px;
-    height: 440px;
-
     position: relative;
+    z-index: 1;
+
+    width: 440px;
+    height: 520px;
+
+    flex-shrink: 0;
 
     overflow: hidden;
 
     border-radius: 50%;
 
-    border: 1px solid rgba(41, 5, 5, 0.15);
-
     background: #e9eee0;
 
+    border: 1px solid rgba(0, 0, 0, 0.12);
+
     box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.16),
-        0 0 0 12px rgba(255, 255, 255, 0.35);
+        0 25px 70px rgba(0, 0, 0, 0.13),
+        0 0 0 12px rgba(255, 255, 255, 0.32);
 }
-.hero-visual {
-    position: absolute;
-    top: -5px;
-    right: 10px;
-    z-index: 1;
-}
+
 .profile-circle img {
     width: 100%;
     height: 100%;
@@ -2623,10 +2552,9 @@ button:focus-visible {
     display: block;
 
     object-fit: cover;
+    object-position: center;
 
-    object-position: 35% center;
-
-    transition: transform s ease;
+    transition: transform 0.4s ease;
 }
 
 .profile-circle:hover img {
@@ -2640,22 +2568,19 @@ button:focus-visible {
 
 @media (max-width: 1100px) {
 
-    .hero-content {
-        width: 100%;
-        padding-left: 0;
-    }
-    .hero-visual {
-        right: -150px;
-        top: 20px;
-        opacity: 0.55;
+    .hero {
+        gap: 35px;
+        padding-left: 50px;
+        padding-right: 50px;
     }
 
     .profile-circle {
-        width: 400px;
-        height: 400px;
+        width: 360px;
+        height: 450px;
     }
+
     .hero h1 {
-        font-size: clamp(60px, 8vw, 100px);
+        font-size: clamp(64px, 8vw, 96px);
     }
 
 }
@@ -2670,64 +2595,172 @@ button:focus-visible {
     .hero {
         min-height: auto;
 
-        padding: 70px 0 60px;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+
+        gap: 0;
+
+        padding: 48px 0 65px;
 
         text-align: center;
     }
 
+
+    /* ---------------------------------------------
+       PROFILE PHOTO
+       --------------------------------------------- */
+
+    .profile-circle {
+        width: min(72vw, 330px);
+        height: min(72vw, 330px);
+
+        margin: 0 auto 38px;
+
+        flex-shrink: 0;
+
+        border-radius: 50%;
+
+        box-shadow:
+            0 20px 55px rgba(0, 0, 0, 0.13),
+            0 0 0 8px rgba(255, 255, 255, 0.32);
+    }
+
+    .profile-circle img {
+        object-position: center;
+    }
+
+
+    /* ---------------------------------------------
+       HERO CONTENT
+       --------------------------------------------- */
+
     .hero-content {
-        max-width: 700px;
+        width: calc(100% - 36px);
+        max-width: 620px;
+
+        margin: 0 auto;
+    }
+
+
+    /* ---------------------------------------------
+       EYEBROW
+       --------------------------------------------- */
+
+    .hero-eyebrow {
+        max-width: 330px;
+
+        margin: 0 auto 18px;
+
+        font-size: 10px;
+        line-height: 1.8;
+        letter-spacing: 0.16em;
+    }
+
+
+    /* ---------------------------------------------
+       NAME
+       --------------------------------------------- */
+
+    .hero h1 {
+        margin-bottom: 24px;
+
+        font-size: clamp(58px, 16vw, 82px);
+        line-height: 0.88;
+        letter-spacing: -0.07em;
+    }
+
+
+    /* ---------------------------------------------
+       RESEARCH FOCUS
+       --------------------------------------------- */
+
+    .hero-focus {
+        justify-content: center;
+
+        max-width: 380px;
 
         margin: 0 auto;
 
-        padding-left: 0;
+        gap: 7px 0;
+
+        font-size: clamp(16px, 4.5vw, 20px);
+        line-height: 1.55;
     }
 
-    .hero-eyebrow {
-        margin-bottom: 20px;
+    .hero-focus span {
+        white-space: nowrap;
     }
 
-    .hero h1 {
-        font-size: clamp(52px, 14vw, 86px);
-
-        line-height: 0.92;
+    .hero-focus span:not(:last-child)::after {
+        margin-left: 10px;
+        margin-right: 10px;
     }
 
-    .hero-focus {
-        margin-left: auto;
-        margin-right: auto;
 
-        font-size: 19px;
-    }
-
-    .hero-description {
-        margin-left: auto;
-        margin-right: auto;
-
-        font-size: 15px;
-    }
+    /* ---------------------------------------------
+       BUTTONS
+       --------------------------------------------- */
 
     .hero-actions {
-        justify-content: center;
+        flex-direction: column;
+
+        width: 100%;
+
+        gap: 12px;
+
+        margin-top: 30px;
     }
+
+    .hero-actions a {
+        width: 100%;
+
+        min-height: 54px;
+
+        padding: 0 24px;
+
+        font-size: 14px;
+    }
+
+
+    /* ---------------------------------------------
+       DIVIDER
+       --------------------------------------------- */
 
     .hero-divider {
-        margin-left: auto;
-        margin-right: auto;
+        margin-top: 45px;
     }
+
+
+    /* ---------------------------------------------
+       STATISTICS
+       --------------------------------------------- */
 
     .hero-stats {
-        justify-content: center;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
 
-        gap: 45px;
+        gap: 12px;
+
+        margin-top: 25px;
+
+        text-align: center;
     }
 
-    .profile-circle {
-        width: 360px;
-        height: 360px;
-
-        margin: 0 auto 40px;
+    .hero-stat {
+        align-items: center;
     }
+
+    .hero-stat strong {
+        font-size: clamp(18px, 5vw, 24px);
+        line-height: 1.05;
+    }
+
+    .hero-stat span {
+        font-size: 8px;
+        line-height: 1.45;
+        letter-spacing: 0.09em;
+    }
+
 }
 
 
@@ -2738,55 +2771,73 @@ button:focus-visible {
 @media (max-width: 500px) {
 
     .hero {
-        padding: 60px 0 70px;
+        padding-top: 38px;
+        padding-bottom: 55px;
     }
+
+
+    .profile-circle {
+        width: min(68vw, 280px);
+        height: min(68vw, 280px);
+
+        margin-bottom: 34px;
+    }
+
+
+    .hero-content {
+        width: calc(100% - 32px);
+    }
+
 
     .hero-eyebrow {
-        font-size: 10px;
+        max-width: 290px;
 
-        letter-spacing: 0.13em;
+        font-size: 9px;
+        letter-spacing: 0.14em;
     }
+
 
     .hero h1 {
-        font-size: 54px;
+        font-size: clamp(56px, 17vw, 72px);
     }
 
+
     .hero-focus {
+        max-width: 360px;
+
+        font-size: 16px;
+    }
+
+
+    .hero-focus span:not(:last-child)::after {
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+
+
+    .hero-actions a {
+        min-height: 52px;
+    }
+
+
+    .hero-divider {
+        margin-top: 40px;
+    }
+
+
+    .hero-stats {
+        gap: 8px;
+    }
+
+
+    .hero-stat strong {
         font-size: 17px;
     }
 
-    .hero-focus span {
-        padding: 0 3px;
+
+    .hero-stat span {
+        font-size: 7.5px;
+        letter-spacing: 0.07em;
     }
 
-    .hero-description {
-        font-size: 14px;
-    }
-
-    .hero-actions {
-        align-items: stretch;
-
-        flex-direction: column;
-
-        width: 100%;
-    }
-
-    .hero-actions a {
-        width: 100%;
-    }
-
-    .hero-stats {
-        gap: 25px;
-    }
-
-    .hero-stat strong {
-        font-size: 18px;
-    }
-
-    .profile-circle {
-        width: 220px;
-        height: 220px;
-
-        margin-bottom: 30px;
-    }
 }
