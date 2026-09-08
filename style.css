@@ -2833,3 +2833,167 @@ button:focus-visible {
         padding: 17px 18px;
     }
 }
+/* =========================================================
+   MOBILE NAVIGATION MENU
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    /* -----------------------------------------
+       HAMBURGER BUTTON
+       ----------------------------------------- */
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        width: 44px;
+        height: 44px;
+
+        padding: 0;
+        border: none;
+        background: transparent;
+
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+
+    .menu-toggle span {
+        display: block;
+
+        width: 24px;
+        height: 2px;
+
+        background: var(--text);
+        border-radius: 2px;
+
+        transition:
+            transform 0.3s ease,
+            opacity 0.2s ease,
+            width 0.3s ease;
+    }
+
+
+    /* -----------------------------------------
+       HAMBURGER → X
+       ----------------------------------------- */
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+        width: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+
+    /* -----------------------------------------
+       MOBILE NAVIGATION PANEL
+       ----------------------------------------- */
+
+    .main-nav {
+        display: flex;
+
+        position: absolute;
+
+        top: 70px;
+        left: 18px;
+        right: 18px;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 10px 0;
+
+        background: var(--surface);
+
+        border: 1px solid var(--border);
+        border-radius: 16px;
+
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(-10px);
+
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease,
+            visibility 0.25s ease;
+
+        z-index: 1050;
+    }
+
+
+    /* -----------------------------------------
+       OPEN MOBILE NAVIGATION
+       ----------------------------------------- */
+
+    .main-nav.mobile-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+
+        transform: translateY(0);
+    }
+
+
+    /* -----------------------------------------
+       MOBILE NAVIGATION LINKS
+       ----------------------------------------- */
+
+    .main-nav a {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+
+        padding: 13px 20px;
+
+        font-size: 15px;
+        font-weight: 600;
+
+        text-decoration: none;
+
+        border-radius: 10px;
+
+        transition:
+            background 0.2s ease,
+            color 0.2s ease;
+    }
+
+
+    .main-nav a:hover {
+        background: var(--soft);
+    }
+
+
+    /* -----------------------------------------
+       HIDE DESKTOP CONNECT BUTTON
+       ----------------------------------------- */
+
+    .nav-button {
+        display: none;
+    }
+
+}
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
